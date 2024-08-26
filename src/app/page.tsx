@@ -1,32 +1,16 @@
 'use client';
 
-import { ChangeEventHandler, useCallback, useState } from "react";
-import { queryCountriesByName } from "@/src/gql/queries";
-import { useSuspenseQuery } from "@apollo/client";
-import { CountriesResponseDTO } from "@/src/gql/types";
-import { useCookies } from "next-client-cookies";
-import { gql, useQuery } from "@apollo/client";
-
-const USER_QUERY = gql`
-  query Query {
-    user {
-      id
-      firstName
-      email
-      phone
-    }
-  }
-`;
+import { ChangeEventHandler, useCallback, useState } from 'react';
+import { queryCountriesByName } from '@/src/gql/queries';
+import { useSuspenseQuery } from '@apollo/client';
+import { CountriesResponseDTO } from '@/src/gql/types';
 
 export default function Home() {
-  const cookies = useCookies();
-  const jwtToken: string | undefined = cookies.get("jwtToken");
-
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const { data } = useSuspenseQuery<CountriesResponseDTO>(queryCountriesByName, { variables: { name } });
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setName(event.target.value)
+    setName(event.target.value);
   }, []);
 
   return (
@@ -41,7 +25,7 @@ export default function Home() {
           <th>Continent Name</th>
         </thead>
         <tbody>
-          {data.countries.map(country => (
+          {data.countries.map((country) => (
             <tr key={country.code}>
               <td>{country.code}</td>
               <td>{country.name}</td>
