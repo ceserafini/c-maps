@@ -18,10 +18,14 @@ export const queryCountriesByName = gql`
     countries(filter: { name: { regex: $name } }) {
       code
       name
+      capital
       continent {
-        code
         name
       }
+      languages {
+        name
+      }
+      emoji
     }
   }
 `;
