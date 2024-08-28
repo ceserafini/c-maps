@@ -8,7 +8,15 @@ export interface Country {
   name: string;
   capital: string;
   continent: Continent;
-  latlng: [number, number];
+  latlng: {
+    latitude: number;
+    longitude: number;
+  };
+  emoji: string;
+  emojiU: string;
+  languages: {
+    name: string;
+  };
 }
 
 export type CountriesResponseDTO = {
