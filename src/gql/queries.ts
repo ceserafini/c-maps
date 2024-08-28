@@ -26,6 +26,7 @@ export const queryCountriesByName = gql`
         name
       }
       emoji
+      emojiU
     }
   }
 `;
