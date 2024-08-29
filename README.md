@@ -36,15 +36,12 @@ Before you begin, ensure you have the following installed:
 
 ### Running the Project
 
-To run the development server: `npm run dev` Or with yarn: `yarn dev`
-
-Open your browser and navigate to `http://localhost:3000` to view the application.
+1. To run the development server: `npm run dev` or with yarn: `yarn dev`
+2. Open your browser and navigate to `http://localhost:3000` to view the application.
 
 ### Building the Project
 
-To build the project for production: `npm run build`
-
-Or with yarn: `yarn build`
+To build the project for production: `npm run build` or with yarn: `yarn build`
 
 ### Linting and Formatting
 
