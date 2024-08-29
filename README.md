@@ -12,7 +12,6 @@ C-Maps is an interactive web application that allows users to explore the world 
 - **Interactive Map**: Pan and zoom across the world with smooth transitions.
 - **Search Functionality**: Search for countries by name, ISO code, or region using an autocomplete search bar.
 - **Country Information Panel**: Display detailed country information in a side panel, including the flag, capital, population, and geographic coordinates.
-- **Map Styling**: Beautiful terrain-based map style using the Stamen Terrain tile layer.
 - **Zoom and Pan Restrictions**: Prevent infinite panning and limit zoom levels to maintain a clean and focused map view.
 
 ## Getting Started
@@ -79,8 +78,6 @@ The project includes linting and formatting configurations for consistent code q
 - **Zoom and Bounds**: The map is configured with specific zoom levels and bounds to prevent infinite panning and maintain a clear view.
 
 ### Environment Variables
-
-If you decide to use a service like Mapbox that requires an API token, you can store it in a `.env` file:
 
 ```env
 NEXT_COUNTRIES_TREVORBLADES_GRAPH_QL_URL=https://countries.trevorblades.com/graphql
