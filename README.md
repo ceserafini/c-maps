@@ -33,49 +33,19 @@ Before you begin, ensure you have the following installed:
    cd c-maps
    ```
 
-2. **Install dependencies**:
-
-   Using npm:
-
-   ```bash
-   npm install
-   ```
-
-   Or using yarn:
-
-   ```bash
-   yarn install
-   ```
+2. **Install dependencies**: Using npm: `npm install` Or using yarn: `yarn install`
 
 ### Running the Project
 
-To run the development server:
-
-```bash
-npm run dev
-```
-
-Or with yarn:
-
-```bash
-yarn dev
-```
+To run the development server: `npm run dev` Or with yarn: `yarn dev`
 
 Open your browser and navigate to `http://localhost:3000` to view the application.
 
 ### Building the Project
 
-To build the project for production:
+To build the project for production: `npm run build`
 
-```bash
-npm run build
-```
-
-Or with yarn:
-
-```bash
-yarn build
-```
+Or with yarn: `yarn build`
 
 ### Linting and Formatting
 
@@ -91,7 +61,6 @@ The project includes linting and formatting configurations for consistent code q
 ├── components
 │   ├── Map
 │   │   ├── LeafletMap.tsx       # Main map component
-│   │   ├── CountryInfoPanel.tsx # Side panel for country details
 │   ├── SearchPlace.tsx          # Search input component
 ├── store
 │   ├── CountryStore.ts          # Zustand store for state management
@@ -114,7 +83,7 @@ The project includes linting and formatting configurations for consistent code q
 If you decide to use a service like Mapbox that requires an API token, you can store it in a `.env` file:
 
 ```env
-NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your-mapbox-access-token
+NEXT_COUNTRIES_TREVORBLADES_GRAPH_QL_URL=https://countries.trevorblades.com/graphql
 ```
 
 ## Contributing
