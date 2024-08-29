@@ -7,16 +7,19 @@ function SearchPlace() {
     filterCountries: state.filterCountries,
   }));
   const [searchTerm, setSearchTerm] = useState('');
+  const [open, setOpen] = useState(false);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchTerm(value);
     filterCountries(value);
+    setOpen(true);
   };
 
   const handleOptionClick = (countryName: string) => {
     setSearchTerm(countryName);
     filterCountries(countryName);
+    setOpen(false);
   };
 
   return (
@@ -32,11 +35,11 @@ function SearchPlace() {
           onChange={handleSearch}
         />
       </div>
-      {searchTerm && filteredCountries.length > 0 && (
+      {open && searchTerm && filteredCountries.length > 0 && (
         <div className="absolute top-12 w-full bg-white rounded-xl shadow-lg p-2 max-h-60 overflow-y-auto text-black z-[1000]">
           {filteredCountries.map((country) => (
             <div key={country.code} className="cursor-pointer p-2 hover:bg-gray-100" onClick={() => handleOptionClick(country.name)}>
-              {country.name} ({country.code})
+              {country.name} ({country.code}) {country.continent.name}
             </div>
           ))}
         </div>

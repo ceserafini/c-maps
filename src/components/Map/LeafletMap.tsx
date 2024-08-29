@@ -14,6 +14,11 @@ const LeafletMap: React.FC = () => {
     filteredCountries: state.filteredCountries,
   }));
 
+  const verticalBounds = L.latLngBounds([
+    [-85, -Infinity],
+    [85, Infinity],
+  ]);
+
   const CustomIcon = L.divIcon({
     html: `<div style="font-size: 24px; color: red;">${ReactDOMServer.renderToString(<AiFillEnvironment />)}</div>`,
     className: 'custom-marker-icon',
@@ -22,10 +27,19 @@ const LeafletMap: React.FC = () => {
   });
 
   return (
-    <MapContainer center={[0, -60]} zoom={3} style={{ height: '100vh', width: '100vw' }}>
+    <MapContainer
+      center={[0, -60]}
+      zoom={3}
+      minZoom={2}
+      maxZoom={18}
+      style={{ height: '100vh', width: '100vw' }}
+      maxBounds={verticalBounds}
+      maxBoundsViscosity={1.0}
+      worldCopyJump={true}
+    >
       <TileLayer
-        attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       />
       {filteredCountries.map((country) => (
         <Marker key={country.code} position={[country.latlng.latitude, country.latlng.longitude]} icon={CustomIcon}>

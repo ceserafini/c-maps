@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Country } from '../interfaces/types';
+import { Country, LatLonData } from '../interfaces/types';
 import { getCountryEmoji } from '../helpers';
 
 interface StoreState {
@@ -9,7 +9,7 @@ interface StoreState {
   setSelectedCountry: (country: Country) => void;
   setCountries: (countries: Country[]) => void;
   filterCountries: (searchTerm: string) => void;
-  combineCountriesWithLatLon: (data: Country[], latLonData: any[]) => void;
+  combineCountriesWithLatLon: (data: Country[], latLonData: LatLonData[]) => void;
 }
 
 export const useCountryStore = create<StoreState>((set) => ({
