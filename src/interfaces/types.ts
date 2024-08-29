@@ -16,7 +16,14 @@ export interface Country {
   emojiU: string;
   languages: {
     name: string;
-  };
+  }[];
+}
+
+export interface LatLonData {
+  Country: string;
+  'ISO Code': string;
+  Latitude: number;
+  Longitude: number;
 }
 
 export type CountriesResponseDTO = {
